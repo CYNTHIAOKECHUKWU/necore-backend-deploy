@@ -1,0 +1,14 @@
+backend/node_modules/
+
+node_modules/
+dist/
+uploads/
+backend/uploads/
+
+.env
+.env.*
+.env.local
+
+*.log
+*.tsbuildinfo
+.DS_Store
