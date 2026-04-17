@@ -6,8 +6,6 @@
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
 
-    
-
     "rootDir": "./src",
     "outDir": "./dist",
 
@@ -22,8 +20,7 @@
 
     "incremental": true,
     "sourceMap": true,
-    "declaration": false,
-    "types": ["node"]
+    "declaration": false
   },
 
   "include": ["src"],
