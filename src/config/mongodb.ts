@@ -5,13 +5,19 @@ let db: Db;
 export async function connectDB() {
   if (db) return db;
 
-  const client = new MongoClient(process.env.MONGODB_URI as string);
+  const uri = process.env.MONGO_URI;
+
+  if (!uri) {
+    throw new Error("MONGO_URI is not defined in environment variables");
+  }
+
+  const client = new MongoClient(uri);
 
   await client.connect();
   db = client.db("necore");
 
   console.log("✅ MongoDB connected");
-  console.log("MONGO URI:", process.env.MONGODB_URI);
+  console.log("MONGO_URI:", uri);
 
   return db;
 }

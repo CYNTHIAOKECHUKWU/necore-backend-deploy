@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: necore-backend-deploy
+    runtime: node
+
+    buildCommand: npm install && npm run build
+    startCommand: node dist/server.js
+
+    envVars:
+      - key: API_AUTH_KEY
+        value: necore_super_secret_key_123
+
+      - key: MONGO_URI
+        value: mongodb+srv://necore_admin_user:necoreChi669127@necore-cluster.ahruuq7.mongodb.net/necore?retryWrites=true&w=majority
